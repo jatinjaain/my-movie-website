@@ -1,0 +1,56 @@
+<%- include("./partials/header")%>
+
+    <!-- https://stackoverflow.com/questions/17755147/displaying-an-image-with-ejs-in-node-js-express -->
+    <!-- above it tells how to add images in ejs file -->
+    
+
+    
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" style="height: 60vh;">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+          <!-- <li data-target="#carouselExampleCaptions" data-slide-to="5"></li> -->
+        </ol>
+        <div class="carousel-inner" style="height: 60vh;">
+          <div class="carousel-item active">
+                <img src="bladerunner.jpg" class="d-block w-100">
+              </div>
+          <!-- <div class="carousel-item">
+                <img src="matrix.jpeg" class="d-block w-100">
+            </div> -->
+          <div class="carousel-item ">
+            <img src="avengers.jpg" class="d-block w-100">
+          </div>
+          <div class="carousel-item">
+            <img src="avatar_2009.jpg" class="d-block w-100" >
+          </div>
+          <div class="carousel-item">
+            <img src="Inception.jpg" class="d-block w-100">
+          </div>
+          <div class="carousel-item">
+            <img src="spaceodessy.jpg" class="d-block w-100">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <div class="jumbotron">
+        <h1 class="display-4">Find the most reliable movie reviews here</h1>
+        <p class="lead">You can search a name of movie in the search box at the top of this page.</p>
+        <hr class="my-4">
+        <p>Jatin Jain's recommendations</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      </div>
+
+
+<%- include("./partials/footer")%>
