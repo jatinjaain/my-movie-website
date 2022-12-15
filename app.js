@@ -15,7 +15,7 @@ app.get('/about', (req, res)=>{
     res.send("about the website ");
 })
 app.get('/contact', (req, res)=>{
-    res.send("about the website ");
+    res.send("contact me ");
 })
 
 app.get('/result', (req,res)=>{
