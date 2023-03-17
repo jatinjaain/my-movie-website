@@ -1,6 +1,6 @@
 input {
     border-radius: 25px;
-    border: 1px solid rgb(93, 90, 95);
+    border: 1px solid rgb(212, 211, 212);
     margin: 20px;
     padding: 20px;
     width: 300px;
@@ -8,9 +8,9 @@ input {
 }
 
 #searchButton {
-    background-color: #4CAF50;
+    background-color: #39603a;
     border: none;
-    color: white;
+    color: rgb(207, 204, 204);
     padding: 20px;
     text-align: center;
     text-decoration: none;
@@ -18,11 +18,11 @@ input {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: 25px;
 }
 
 button {
-    background-color: #5b5b5b;
+    background-color: #9d9b9b;
     border: none;
     color: white;
     padding: 10px;

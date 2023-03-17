@@ -88,11 +88,11 @@ function App() {
            <p>loading</p>
       } */}
 
-      {data == null
-        ? <p>Loading</p>
-        : (data.Response === "False"
-          ? <MostSearched />
-          : <CardList dataArr={data?.Search} setIdForDetail={setIdForDetail} details={detailsForId.Plot} />
+      {data == null ?
+        <p>Loading</p> :
+        (data.Response === "False" ?
+          <MostSearched /> :
+          <CardList dataArr={data?.Search} setIdForDetail={setIdForDetail} details={detailsForId.Plot} />
         )
       }
     </div>

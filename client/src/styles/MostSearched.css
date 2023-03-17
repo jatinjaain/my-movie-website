@@ -1,0 +1,30 @@
+img {
+    border-radius: 5%;
+}
+
+/* .card-grid {
+    border: 3px solid #1f6935;
+    padding: 90px;
+}
+
+.card {
+    width: 15%;
+    background-color: rgb(229, 229, 229);
+    float: left;
+    padding: 20px;
+    border-radius: 5%;
+    margin: 1%;
+} */
+
+.card-grid {
+    display: flex;
+    overflow: auto;
+    background-color: aliceblue;
+}
+
+.card {
+    flex: 1;
+    background-color: rgb(229, 229, 229);
+    /* border-radius: 5%; */
+    margin: 1%;
+}
