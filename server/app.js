@@ -57,38 +57,54 @@ app.get('/movieById', (req, res) => {
     })
 })
 
-app.get('/mostSearchedMovies', (req, res) => {
+app.get('/mostSearchedMovies', async (req, res) => {
     console.log(`Getting most searched movies from database`)
     const url = `http://www.omdbapi.com/?apikey=${process.env.API_KEY}&i=`;
     // get 20 most clicked movies from database
     // for each id fetch the title and poster 
     // we need to return an list of id, title and poster
 
-    // mostClicked((resultArr) => {
-    //     new Promise((resolve, reject) => {
-    //         const data = resultArr.map((ele) => {
-    //             fetch(url + ele.imdbID)
-    //                 .then((res) => {
-    //                     return res.json()
-    //                 })
-    //                 .then((jsonData) => {
-    //                     ele.title = jsonData.Title
-    //                     ele.poster = jsonData.Poster
-    //                 })
-    //         })
-    //         resolve(data);
-    //     })
-    //         .then((data) => {
-    //             console.log(data)
-    //             res.send(data)
-    //         }
-    //         )
-    // });
 
-    mostClicked((results) => { res.send(results) })
+    const getDetailedArr = () => {
+        let detailArr = mostClicked()
+            .then(async (resultArr) => {
+                // console.log(resultArr)
 
-    // res.send(data);
+                const mostClickedArr = await Promise.all(resultArr.map(async (ele) => {
+                    const eleWithDetail = fetch(url + ele.imdbID)
+                        .then((res) => {
+                            return res.json()
+                        })
+                        .then((jsonData) => {
+                            // console.log(jsonData.Title + " " + ele.imdbID)
+                            const tempEle = {}
+                            tempEle.imdbID = ele.imdbID
+                            tempEle.title = jsonData.Title
+                            tempEle.poster = jsonData.Poster
+                            return tempEle
+                        })
+                    return eleWithDetail
+                }))
+                return mostClickedArr
+            }
+            ).then((resArr) => {
+                // console.log("in second then" + resArr)
+                return resArr;
+            }
+            )
+        // console.log(detailArr) // how is this promise
+        return detailArr
+
+    }
+
+    getDetailedArr().then((resArr) => {
+        // console.log("final" + resArr)
+        res.send(resArr)
+    }
+    )
 })
+
+
 
 
 app.get('*', (req, res) => {
